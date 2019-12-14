@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hybrid Cloud Gift Record</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/stylesheets/style.css">
+    <script src="static/javascripts/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+      <table>
+		<tr>
+            <td style= "width:30%;">
+              <img class = "newappIcon" src="static/images/gift-boxes-icon.png">
+            </td>
+			<td>
+				<h1 id = "message">Gift Record</h1>
+				<p class='description'>
+          Use this application to track gifts received and whether a thank you note was mailed.
+          <br><br>
+                </pre>
+                Record a gift:
+                <form id="create_data" action="/data" method="post" enctype="application/json">
+                    <div>
+                      <label for="gift">What is the gift?</label>
+                      <input name="gift" id="gift" value="">
+                    </div>
+                    <div>
+                      <label for="gifter">Who is the gift from?</label>
+                      <input name="gifter" id="gifter" value="">
+                    </div>
+                    <div>
+                      <label for="thanked">Was a thank you note sent?</label>
+                      <input name="thanked" id="thanked" value="">
+                    </div>
+                    <div>
+                      <button id="submit">Save</button>
+                    </div>
+                </form>
+                
+                                				<br><br>
+
+                </pre>
+                Find records based on sent status of thank you note:
+                <form id="get_data" action="/data" method="get" enctype="application/json">
+                    <div>
+                      <label for="thanked">Was a thank you note sent?</label>
+                      <input name="thanked" id="thanked" value="">
+                    </div>
+                    <div>
+                      <button id="submit">Get Note Status</button>
+                    </div>
+                </form>
+          
+                				<br><br>
+
+                </pre>
+                Update the status of a thank you note (use the previous section to find the record id):
+                <form id="update_data" action="/data" method="get" enctype="application/json">
+                  <div>
+                    <label for="data_id">What is the id no?</label>
+                    <input name="data_id" id="data_id" value="">
+                  </div>
+                  <div>
+                    <label for="thanked">Was a thank you note sent?</label>
+                    <input name="thanked" id="thanked" value="">
+                  </div>
+                  <div>
+                    <button id="submit">Update Data</button>
+                  </div>
+                </form>
+                
+                
+			</td>
+		</tr>
+	</table>
+  </body>
+</html>
